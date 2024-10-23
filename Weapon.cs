@@ -5,9 +5,7 @@ public class Weapon
     //Set ammo level to 5 bullets
     public int ammo = 5;
     ConsoleKeyInfo key;
-    public Weapon weapon = new Weapon();
     
-    public Object2 object2 = new Object2();
     public Weapon Ammunition()
     {
             if (key.Key == ConsoleKey.T)
@@ -18,13 +16,14 @@ public class Weapon
             if (ammo < 1)
             {
                 //Disable the shooting mechanism
-                return weapon.Reload();                
+                return this.Reload();                
             }
             else
             {
-                return new Weapon();
+                return this;
             }
-        return new Weapon();
+
+            return this;
     }
 
     public Weapon Reload()
