@@ -41,18 +41,18 @@ public class Movement{
         if(input.Key == System.ConsoleKey.DownArrow){
             //Move Down
             Point currPos = new Point(0, -1);
-            System.Console.WriteLine("You have taken 1 step to the down");
+            System.Console.WriteLine("You have taken 1 step downwards");
         }
     }
 
     public bool hasMovement()
     {
-        return new bool();
+        return true;
     }
 
     public void Debug()
     {
-        MethodBase getMethod = MethodBase.GetMethodFromHandle("Left");
+        MethodBase getMethod = MethodBase.GetCurrentMethod();
         Console.WriteLine("{0}, {1}", getMethod.ReflectedType.Name, getMethod.Name);
         if (getMethod.Name == "Debug")
         {

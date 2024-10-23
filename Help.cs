@@ -1,3 +1,5 @@
+using System.Globalization;
+
 public class Help{
 
     DateTime dateTime = DateTime.Now;
@@ -7,9 +9,11 @@ public class Help{
 
     Damage dmg = new Damage();
 
-    public void SearchHelpPage(string msg){
+    public static String msg;
+    public static string SearchHelpPage(string msg){
         System.Console.WriteLine("Type 'search' to find all available objects");
-        System.Console.WriteLine("search weapons|hp|enemies|objects|players");
+        System.Console.WriteLine("search enemy|objects|environment");
+        return msg = Console.ReadLine();
     }
 
     public void OpenHelpPage(string msg){
@@ -30,8 +34,8 @@ public class Help{
         input = Console.ReadKey();
         if(input.Key == ConsoleKey.T){
             foreach(var cultureName in cultureNames){
-                //var culture = new CultureInfo(cultureName);
-                //System.Console.WriteLine("Local date and time:{0}, {1:G}", dateTime.ToString(culture), dateTime.Kind);
+                var culture = new CultureInfo(cultureName);
+                System.Console.WriteLine("Local date and time:{0}, {1:G}", dateTime.ToString(culture), dateTime.Kind);
             }
         }
     }

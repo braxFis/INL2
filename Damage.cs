@@ -5,7 +5,7 @@ public class Damage{
     public int mediumDmg = 2;
     public int largeDmg = 3;
     ConsoleKeyInfo input;
-
+    public Damage damage = new Damage();
     public int knifeCount = 0;
     public int gunCount = 0;
     public int bazookaCount = 0;
