@@ -4,7 +4,7 @@ public class Weapon
 {
     //Set ammo level to 5 bullets
     public int ammo = 5;
-    ConsoleKeyInfo key;
+    ConsoleKeyInfo key = Console.ReadKey();
     
     public Weapon Ammunition()
     {

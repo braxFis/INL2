@@ -72,13 +72,11 @@ class Program
         //     count++;
         //     Console.WriteLine(count);
         // }
-
-        Weapon weapon = new Weapon();
         // Console.WriteLine(weapon.ammo);
         // Console.WriteLine(object2.Gun());
+        // Object2 object2 = new Object2();
+        Weapon weapon = new Weapon();
         weapon.Ammunition();
-        Console.WriteLine(weapon.ammo);
-        weapon.ammo = 4;
         Console.WriteLine(weapon.ammo);
     }
 }
