@@ -5,12 +5,16 @@ using System.Reflection;
 using System.Numerics;
 using System.Reflection.Emit;
 
-public class Movement{
-    static ConsoleKeyInfo input;
+public class Movement
+{
+    //The controlling of the player movement
+    private static ConsoleKeyInfo input = Console.ReadKey();
+
+    //The initialized variable to iterate the environment
     Environment environment = new Environment();
-    
+
+    //Move left
     public static Point Left(){
-        input = Console.ReadKey();
         if(input.Key == System.ConsoleKey.LeftArrow){
             Point currPos = new Point(-1, 0);
             //Vector LeftMove = new Vector(1,0);
@@ -23,6 +27,8 @@ public class Movement{
             return new Point();
         }
     }
+
+    //Move right
     public void Right(){
         if(input.Key == System.ConsoleKey.RightArrow){
             //Move Right...
@@ -30,6 +36,8 @@ public class Movement{
         }
         System.Console.WriteLine("You have taken 1 step to the right");
     }
+
+    //Move up
     public void Up(){
         if(input.Key == System.ConsoleKey.UpArrow){
             //Move Up
@@ -37,6 +45,8 @@ public class Movement{
             System.Console.WriteLine("You have taken 1 step to the up");
         }
     }
+
+    //Move down
     public void Down(){
         if(input.Key == System.ConsoleKey.DownArrow){
             //Move Down
@@ -47,7 +57,18 @@ public class Movement{
 
     public bool hasMovement()
     {
-        return true;
+        if (input.Key == System.ConsoleKey.LeftArrow ||
+            input.Key == System.ConsoleKey.RightArrow ||
+            input.Key == System.ConsoleKey.DownArrow ||
+            input.Key == System.ConsoleKey.UpArrow ||
+            input.Key == ConsoleKey.W ||
+            input.Key == ConsoleKey.A ||
+            input.Key == ConsoleKey.S ||
+            input.Key == ConsoleKey.D)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void Debug()

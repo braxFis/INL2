@@ -1,4 +1,6 @@
 public class Enemies{
+
+    //Default health level of enemies
     public int health = 10;
 
     public int standardHealth(){
