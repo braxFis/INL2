@@ -8,18 +8,36 @@ using System.Reflection.Emit;
 public class Movement
 {
     //The controlling of the player movement
-    private static ConsoleKeyInfo input = Console.ReadKey();
 
+    public static ConsoleKeyInfo input;
+    public Movement()
+    {
+        input = Console.ReadKey(true);
+        if (input.Key == ConsoleKey.UpArrow || input.Key == ConsoleKey.W)
+        {
+            this.Up();
+        } else if(input.Key == ConsoleKey.DownArrow || input.Key == ConsoleKey.S)
+        {
+            this.Down();
+        } else if (input.Key == ConsoleKey.LeftArrow || input.Key == ConsoleKey.A)
+        {
+            this.Left();
+        } else if (input.Key == ConsoleKey.RightArrow || input.Key == ConsoleKey.D)
+        {
+            this.Right();
+        }
+    }
+    
     //The initialized variable to iterate the environment
     Environment environment = new Environment();
 
     //Move left
-    public static Point Left(){
-        if(input.Key == System.ConsoleKey.LeftArrow){
+    public Point Left(){
+        if(input.Key == System.ConsoleKey.LeftArrow || input.Key == ConsoleKey.A){
             Point currPos = new Point(-1, 0);
             //Vector LeftMove = new Vector(1,0);
             //Move Left
-            System.Console.WriteLine("You have taken 1 step to the left");
+            System.Console.WriteLine("You have taken {0} step to the left and {1} step to the up|down direction", currPos.X, currPos.Y);
             return currPos;
         }
         else
@@ -30,28 +48,28 @@ public class Movement
 
     //Move right
     public void Right(){
-        if(input.Key == System.ConsoleKey.RightArrow){
+        if(input.Key == System.ConsoleKey.RightArrow || input.Key == ConsoleKey.D){
             //Move Right...
             Point currPos = new Point(1, 0);
+            System.Console.WriteLine("You have taken {0} step to the right", currPos);
         }
-        System.Console.WriteLine("You have taken 1 step to the right");
     }
 
     //Move up
     public void Up(){
-        if(input.Key == System.ConsoleKey.UpArrow){
+        if(input.Key == System.ConsoleKey.UpArrow || input.Key == ConsoleKey.W){
             //Move Up
             Point currPos = new Point(0, 1);
-            System.Console.WriteLine("You have taken 1 step to the up");
+            System.Console.WriteLine("You have taken {0} steps to the up", currPos);
         }
     }
 
     //Move down
     public void Down(){
-        if(input.Key == System.ConsoleKey.DownArrow){
+        if(input.Key == System.ConsoleKey.DownArrow || input.Key == ConsoleKey.S){
             //Move Down
             Point currPos = new Point(0, -1);
-            System.Console.WriteLine("You have taken 1 step downwards");
+            System.Console.WriteLine("You have taken {0} step downwards", currPos);
         }
     }
 

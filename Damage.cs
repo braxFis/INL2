@@ -11,7 +11,7 @@ public class Damage{
     public int largeDmg = 3;
 
     //Control the game through the console using the keyboard
-    private ConsoleKeyInfo input = Console.ReadKey();
+    private ConsoleKeyInfo input;
     
     //Start implementing the counting operation for every weapon
     //and how many attacks are made
@@ -20,11 +20,14 @@ public class Damage{
     public int bazookaCount = 0;
     
     public int KnifeDmg(){
+        Console.WriteLine("Press Enter to issue Knife Damage to Enemy");
+        input = Console.ReadKey();
         if (Object2.Knife())
         {
             if (input.Key == ConsoleKey.Enter /*&& Player.Position().ToString() == "{X=5,Y=2}"*/)
             {
                 knifeCount++;
+                Console.WriteLine(knifeCount);
                 System.Console.WriteLine("You have injured me. My health is now: " + enemy.health);
                 return enemy.health -= smallDmg;
             }
@@ -39,11 +42,16 @@ public class Damage{
     public int GunDmg(){
         if (Object2.Gun())
         {
+            Console.WriteLine("Press Enter to issue Gun Damage on Enemy.");
+            input = Console.ReadKey();
             if (input.Key == ConsoleKey.Enter)
             {
                 gunCount++;
-                System.Console.WriteLine("You have injured me. My health is now: " + enemy.health);
-                return enemy.health -= mediumDmg;
+                Console.WriteLine($"Current Gun Count : {gunCount}");
+                enemy.health -= mediumDmg;
+                var newHealth = enemy.health;
+                System.Console.WriteLine($"You have injured me. My health is now: {newHealth}");
+                return newHealth;
             }
             else
             {
@@ -56,9 +64,12 @@ public class Damage{
     public int BazookaDmg(){
         if (Object2.Bazooka())
         {
+            Console.WriteLine("Press Enter to issue Bazooka Damage on Enemy.");
+            input = Console.ReadKey();
             if (input.Key == ConsoleKey.Enter)
             {
                 bazookaCount++;
+                Console.WriteLine(bazookaCount);
                 System.Console.WriteLine("You have injured me. My health is now: " + enemy.health);
                 return enemy.health -= largeDmg;
             }

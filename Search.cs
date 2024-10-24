@@ -1,8 +1,9 @@
 using System.Runtime.InteropServices.Marshalling;
 
-public class Search{
+public class Search
+{
     public void ObjectSearcher(){
-        Object @object = new Object();
+        Object2 @object = new Object2();
         Type t = @object.GetType();
         var count = 0;
         Console.WriteLine("You have the following weapons in your inventory");
@@ -35,6 +36,7 @@ public class Search{
         }
 
         public void EnvironmentSearcher(){
+            
             Environment @environment = new Environment();
             Type t = @environment.GetType();
             var count = 0;
