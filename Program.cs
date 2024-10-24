@@ -1,6 +1,4 @@
 ﻿using System.Drawing;
-using System.Reflection;
-using System.Media;
 namespace GruppUppgift2;
 
 class Program
@@ -58,33 +56,41 @@ class Program
         //         //You need player
         //         //You need weapons and objects to interact with
         //     }
-        Point p1 = new Point(5, 2);
-        Point p2 = new Point(3, 5);
-        ConsoleKeyInfo input = Console.ReadKey();
-        while (Console.ReadKey().Key != ConsoleKey.Escape)
-        {
-            if (input.Key == ConsoleKey.UpArrow)
-            {
-                p1.Y++;
-                Console.WriteLine($"Y value: {p1.Y}");
-            } else if (input.Key == ConsoleKey.DownArrow)
-            {
-                p1.Y--;
-                Console.WriteLine($"Y value: {p1.Y}");
-            } else if (input.Key == ConsoleKey.LeftArrow)
-            {
-                p1.X--;
-                Console.WriteLine($"X value: {p1.X}");
-            } else if (input.Key == ConsoleKey.RightArrow)
-            {
-                p1.X++;
-                Console.WriteLine($"X value: {p1.X}");
-            }
-            input = Console.ReadKey();
-        }
-        Console.WriteLine($"{p1.X}, {p1.Y}");
+        // Point p1 = new Point(5, 2);
+        // Point p2 = new Point(3, 5);
+        // ConsoleKeyInfo input = Console.ReadKey();
+        // while (Console.ReadKey().Key != ConsoleKey.Escape)
+        // {
+        //     if (input.Key == ConsoleKey.UpArrow)
+        //     {
+        //         p1.Y++;
+        //         Console.WriteLine($"Y value: {p1.Y}");
+        //     } else if (input.Key == ConsoleKey.DownArrow)
+        //     {
+        //         p1.Y--;
+        //         Console.WriteLine($"Y value: {p1.Y}");
+        //     } else if (input.Key == ConsoleKey.LeftArrow)
+        //     {
+        //         p1.X--;
+        //         Console.WriteLine($"X value: {p1.X}");
+        //     } else if (input.Key == ConsoleKey.RightArrow)
+        //     {
+        //         p1.X++;
+        //         Console.WriteLine($"X value: {p1.X}");
+        //     }
+        //     input = Console.ReadKey();
+        // }
+        // Console.WriteLine($"{p1.X}, {p1.Y}");
         // Size Point2 = new Size(100, 100);
         // Point p3 = Point.Add(p1, Point2);
         // Console.WriteLine(p3.ToString());
+        Movement movement = new Movement();
+        // movement.Left();
+        Point Room = new Point(5, 2);
+        Console.WriteLine(movement.Left().X);
+        // if (Room.X == movement.Left().X)
+        // {
+        //     Console.WriteLine("You found the room..");
+        // }
     }
 }
