@@ -46,14 +46,14 @@ public class Help{
         System.Console.WriteLine("say hi|enter|exit");
     }
 
-    public void checkDateAndTime(){
+    public void CheckDateAndTime(){
         foreach (var cultureName in cultureNames)
         {
             var culture = new CultureInfo(cultureName);
             System.Console.WriteLine("Local date and time:{0}, {1:G}", dateTime.ToString(culture), dateTime.Kind);
         }
     }
-    public void checkHealth(){
+    public void CheckHealth(){
         ConsoleKeyInfo input;
         input = Console.ReadKey();
         if(input.Key == ConsoleKey.H){
@@ -61,7 +61,7 @@ public class Help{
         }
     }
     
-    public void checkAttacks(){
+    public void CheckAttacks(){
         ConsoleKeyInfo input;
         input = Console.ReadKey();
         if(input.Key == ConsoleKey.J){
@@ -88,7 +88,7 @@ public class Help{
         Health health = new Health();
         Damage dmg = new Damage();
         Console.WriteLine("Your health starts with {0}", health.standardHealth(new Player()));
-        Console.WriteLine("Your health can be increased by picking up health items scattered out in various Room Locations: {0}, {1}, {2}", health.smallHealth, health.mediumHealth, health.largeHealth);
+        Console.WriteLine("Your health can be increased by picking up health items scattered out in various Room Locations: {0}, {1}, {2}", checkHealth2.smallHealth, health.mediumHealth, health.largeHealth);
         Console.WriteLine("Your health can be reduced when the enemy damages you by the following amounts: {0}, {1}, {2}", dmg.smallDmg, dmg.mediumDmg, dmg.largeDmg);
     }
 }

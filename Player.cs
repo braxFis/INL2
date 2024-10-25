@@ -2,8 +2,6 @@ using System.Drawing;
 
 public class Player : Movement{
     public int health = 10;
-    public int speed;
-    public int strength;
     
     Movement movement = new Movement();
     Damage damage = new Damage();   
